@@ -12,6 +12,7 @@ This project is being developed step by step to learn and implement real-world f
 - React.js
 - Tailwind CSS
 - React Router
+- TypeScript
 
 ### Backend
 - Node.js
