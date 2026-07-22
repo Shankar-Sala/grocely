@@ -1,7 +1,14 @@
 import { useState } from "react";
-import { heroSectionData } from "../assets/assets";
+import { assets, heroSectionData } from "../assets/assets";
 import { Link } from "react-router-dom";
-import { Loader2Icon, LockIcon, MailIcon, ShoppingCartIcon, UserIcon } from "lucide-react";
+import {
+  Loader2Icon,
+  LockIcon,
+  MailIcon,
+  ShoppingCartIcon,
+  UserIcon,
+} from "lucide-react";
+import logo from "../assets/logo.png";
 
 const Login = () => {
   //states
@@ -42,10 +49,15 @@ const Login = () => {
           {/* Form header message */}
           <div className="text-center mb-8">
             <Link to="/" className="inline-flex items-center gap-2 mb-6">
-              <ShoppingCartIcon className="size-8 text-app-green" />
-              <span className="text-2xl font-semibold text-app-green">
+              {/* <ShoppingCartIcon className="size-8 text-app-green" /> */}
+              <img
+                src={assets.logo}
+                alt="Grocely Logo"
+                className="h-10 w-auto object-contain"
+              />
+              {/* <span className="text-2xl font-semibold text-app-green">
                 Grocely
-              </span>
+              </span> */}
             </Link>
 
             <h1 className="text-2xl font-semibold text-app-green mb-2">
@@ -105,7 +117,7 @@ const Login = () => {
               </div>
             </label>
 
-             <label htmlFor="password" className="text-sm flex flex-col gap-1">
+            <label htmlFor="password" className="text-sm flex flex-col gap-1">
               Password
               <div className="relative">
                 <LockIcon className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-app-text-light" />
@@ -121,11 +133,20 @@ const Login = () => {
                 />
               </div>
             </label>
-            <button type="submit" disabled={loading} className="flex-center w-full py-3 bg-green-950 text-white font-semibold rounded-xl hover:bg-green-900 transition-colors disabled:opacity-50">
-            {/*Loading  */}
-              {loading ? <Loader2Icon className="animate-spin"/> : isLoginState ? "Sign In" : "Sign Up"}
+            <button
+              type="submit"
+              disabled={loading}
+              className="flex-center w-full py-3 bg-green-950 text-white font-semibold rounded-xl hover:bg-green-900 transition-colors disabled:opacity-50"
+            >
+              {/*Loading  */}
+              {loading ? (
+                <Loader2Icon className="animate-spin" />
+              ) : isLoginState ? (
+                "Sign In"
+              ) : (
+                "Sign Up"
+              )}
             </button>
-              
           </form>
         </div>
       </div>
